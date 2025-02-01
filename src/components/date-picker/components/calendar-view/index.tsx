@@ -33,6 +33,7 @@ function CalendarView({ value, onChange }: CalendarViewProps) {
                     return {
                         onClick: () => onDayClicked(date),
                         className: cn(
+                            'aspect-square',
                             calendarViewMonth !== month && 'text-gray-300',
                             isSameDay(date, value) && 'bg-primary text-white'
                         ),

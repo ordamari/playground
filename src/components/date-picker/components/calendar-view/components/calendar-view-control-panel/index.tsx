@@ -1,4 +1,5 @@
 import { format, addMonths } from 'date-fns'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 type CalendarViewControlPanelProps = {
     setCalendarViewDate: (date: Date) => void
@@ -19,11 +20,15 @@ function CalendarViewControlPanel({
 
     return (
         <div className="grid grid-cols-[auto_1fr_auto]">
-            <button onClick={handlePrevMonth}>prev month</button>
+            <button onClick={handlePrevMonth}>
+                <ArrowLeft />
+            </button>
             <div className="text-center">
-                {format(calenderViewDate, 'dd/MM/yy')}
+                {format(calenderViewDate, 'MMMM yyyy')}
             </div>
-            <button onClick={handleNextMonth}>next month</button>
+            <button onClick={handleNextMonth}>
+                <ArrowRight />
+            </button>
         </div>
     )
 }
