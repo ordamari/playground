@@ -17,7 +17,7 @@ function CalendarList({
     rangeDates,
 }: CalendarListProps) {
     return (
-        <div className="flex">
+        <div className="flex flex-col">
             {Array.from({ length: amountOfMonths }).map((_, index) => {
                 const indexViewDate = addMonths(calenderViewDate, index)
                 const indexViewMonth = indexViewDate.getMonth()
@@ -32,6 +32,7 @@ function CalendarList({
                             return {
                                 onClick: () => onDayClicked(date),
                                 className: cn(
+                                    'aspect-square',
                                     indexViewMonth !== month && 'text-gray-300',
                                     isWithinInterval(date, {
                                         start: rangeDates[0],
